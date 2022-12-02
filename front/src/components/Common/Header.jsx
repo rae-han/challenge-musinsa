@@ -6,7 +6,7 @@ const HeaderContainer = styled.header`
   flex-shrink: 0;
   position: relative;
   height: 50px;
-  background-color: red;
+  background-color: #fff;
   
   .logo {
     position: absolute;

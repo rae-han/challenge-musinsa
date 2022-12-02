@@ -12,6 +12,9 @@ const DefaultLayoutContainer = styled.div`
   background-color: blue;
   
   .view {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     flex-grow: 1;
   }
 `;
