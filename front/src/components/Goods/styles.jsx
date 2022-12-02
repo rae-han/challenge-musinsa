@@ -1,10 +1,11 @@
 import styled from '@emotion/styled';
 
 export const GoodsContainer = styled.div`
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
-  margin-top: 10px;
+  padding-top: 10px;
   background-color: var(--color-white);
 `;
 
@@ -17,6 +18,10 @@ export const ItemWrap = styled.div`
     background-color: grey;
     aspect-ratio: 188/226;
     object-fit: cover;
+    
+    &.good__image--soldout {
+      
+    }
   }
   
   .good__info {
@@ -50,6 +55,13 @@ export const ItemWrap = styled.div`
       .good__sale-rate {
         color: var(--color-red);
       }
+    }
+    
+    .good__origin-price {
+      height: 12px;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12px;
     }
   }
 `;

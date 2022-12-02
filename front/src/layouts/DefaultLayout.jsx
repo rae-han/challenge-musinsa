@@ -12,6 +12,7 @@ const DefaultLayoutContainer = styled.div`
   background-color: var(--color-white);
   
   .view {
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
