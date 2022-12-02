@@ -14,6 +14,7 @@ const config = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@pages': path.resolve(__dirname, 'src/pages'),
+      '@public': path.resolve(__dirname, 'public'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
     },
   },
@@ -45,8 +46,8 @@ const config = {
         exclude: path.join(__dirname, 'node_modules'),
       },
       {
-        test: /\.(css|scss)?$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(css|s[ac]ss)?$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,

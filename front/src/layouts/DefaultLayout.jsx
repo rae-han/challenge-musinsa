@@ -9,13 +9,14 @@ const DefaultLayoutContainer = styled.div`
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: blue;
+  background-color: var(--color-white);
   
   .view {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     flex-grow: 1;
+    background-color: var(--color-f1f1f1);
   }
 `;
 
