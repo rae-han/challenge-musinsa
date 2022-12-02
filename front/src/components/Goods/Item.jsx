@@ -1,13 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import {ItemWrap} from '@components/Goods/styles';
 import { commaNumber } from '../../utils/commaNumber';
+import { classnames } from '../../utils/classnames';
+import notfoundImage from '@images/notfoundImage.jpeg'
 
 function Item ({good}) {
-  console.log(good)
+  console.log(good.isSoldOut)
+  const [isErrorImage, setIsErrorImage] = useState(false)
 
-  const onErrorImage = () => {
-    console.log('error', good)
-  }
+  const onErrorImage = useCallback(() => {
+    setIsErrorImage(true)
+  }, [good.imageUrl, isErrorImage])
 
   const goodPrice = useMemo(() => {
     return commaNumber(good.price);
@@ -19,7 +22,10 @@ function Item ({good}) {
 
   return (
     <ItemWrap>
-      <img className="good__image" src={good.imageUrl} alt="" onError={onErrorImage} />
+      <div className="good__image-wrap">
+        <img className={classnames("good__image", { 'good_image--notfound': isErrorImage, qwer: true })} src={!isErrorImage ? good.imageUrl : notfoundImage} alt="" onError={onErrorImage} />
+        {good.isSoldOut && <div className="good__image--soldout">SOLD OUT</div>}
+      </div>
       <div className="good__info">
         <h2 className="good__brand-name">{good.brandName}</h2>
         <h1 className="good__good-name">{good.goodsName}</h1>

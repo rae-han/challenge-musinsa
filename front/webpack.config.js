@@ -50,7 +50,7 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|jpg|jpeg)$/,
         loader: 'file-loader'
       }
     ],

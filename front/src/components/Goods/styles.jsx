@@ -13,14 +13,38 @@ export const ItemWrap = styled.div`
   flex-basis: 50%;
   flex-shrink: 0;
   
-  .good__image {
+  .good__image-wrap {
+    position: relative;
     width: 100%;
-    background-color: grey;
     aspect-ratio: 188/226;
-    object-fit: cover;
+    overflow: hidden;
+
+    .good__image {
+      width: 100%;
+      aspect-ratio: 188/226;
+      object-fit: cover;
+
+      &.good_image--notfound {
+        //transform: scale(1.02);
+        border-right: 1px solid #2970c2;
+        border-left: 1px solid #2970c2;
+      }
+    }
     
-    &.good__image--soldout {
-      
+    .good__image--soldout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      font-size: 20px;
+      font-weight: 500;
+      background-color: var(--color-white);
+      color: var(--color-777);
+      opacity: .8;
     }
   }
   
