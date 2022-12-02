@@ -1,9 +1,11 @@
 import React from 'react';
 import {OptionsContainer} from './styles'
 
-function Options () {
+function Options ({ setIsSearch }) {
   return (
-    <OptionsContainer></OptionsContainer>
+    <OptionsContainer>
+      <button onClick={() => setIsSearch(prev => !prev)}>toggleSearch</button>
+    </OptionsContainer>
   )
 }
 

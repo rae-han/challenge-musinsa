@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {FilterContainer} from './styles'
 import Options from '@components/Filter/Options';
 import Selected from '@components/Filter/Selected';
 import Search from '@components/Filter/Search';
 
-function Filter () {
+function Filter ({ref}) {
+  const [isSearch, setIsSearch] = useState(false)
+
   return (
-    <FilterContainer>
-      <Options></Options>
-      <Selected></Selected>
-      <Search></Search>
-    </FilterContainer>
+    <>
+      <FilterContainer>
+        <Options setIsSearch={setIsSearch}></Options>
+        <Selected></Selected>
+        {isSearch && <Search></Search>}
+      </FilterContainer>
+      <div></div>
+    </>
   )
 }
 
