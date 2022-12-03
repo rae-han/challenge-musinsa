@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1858aaab-797b-40a5-b42e-a2807c9fa4ff" name="변경" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/front/src/hooks/useThrottle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/Goods/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Goods/Item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/Goods/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Goods/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/pages/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/home.jsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +25,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IIX5j9dBWTisty5nMjzRiUOaCh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -36,8 +45,30 @@
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.16.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.4&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/raehan/Documents/develop/project/challenge-musinsa&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/front/src/assets" />
+      <recent name="$PROJECT_DIR$/front/src/assets/images" />
+      <recent name="$PROJECT_DIR$/front/src" />
+      <recent name="$PROJECT_DIR$/front/assets" />
+      <recent name="$PROJECT_DIR$/front/public/images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -47,8 +78,13 @@
       <option name="presentableId" value="Default" />
       <updated>1669869890072</updated>
       <workItem from="1669869891465" duration="2073000" />
+<<<<<<< HEAD
       <workItem from="1669874368148" duration="12565000" />
       <workItem from="1669992345135" duration="14824000" />
+=======
+      <workItem from="1669874368148" duration="35163000" />
+      <workItem from="1669970378534" duration="9056000" />
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
     </task>
     <servers />
   </component>
