@@ -5,7 +5,6 @@ import { classnames } from '../../utils/classnames';
 import notfoundImage from '@images/notfoundImage.jpeg'
 
 function Item ({good}) {
-  console.log(good.isSoldOut)
   const [isErrorImage, setIsErrorImage] = useState(false)
 
   const onErrorImage = useCallback(() => {
