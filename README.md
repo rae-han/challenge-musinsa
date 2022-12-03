@@ -1,3 +1,21 @@
+프로젝트 구조
+Home(DefaaultLayout)
+- Filter
+  - Options
+  - SelectedOption
+  - Search
+- Menus
+DefaultLayout
+- Header
+- Sections
+
+# 이미지 없을 때
+# 스크롤이랑 검색할 때 디바운스, 쓰로틀링
+# 글자수 2줄 넘어갈 때 처리
+# 특수 문자는 KS X 1001의 특수문자
+# 폰트 (가격, 솔드아웃)
+
+
 ```markdown
 mkdir front
 cd front
