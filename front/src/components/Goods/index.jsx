@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {GoodsContainer} from './styles';
 import Item from '@components/Goods/Item';
 

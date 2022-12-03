@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 
 export const FilterContainer = styled.div`
+  position: sticky;
+  z-index: 1000;
+  top: 50px;
+  right: 0;
+  left: 0;
   flex-shrink: 0;
   background-color: green;
 `;

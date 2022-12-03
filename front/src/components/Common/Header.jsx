@@ -3,8 +3,11 @@ import styled from '@emotion/styled';
 import logo from '../../assets/images/logo_musinsa.svg'
 
 const HeaderContainer = styled.header`
-  flex-shrink: 0;
-  position: relative;
+  position: sticky;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 50px;
   background-color: #fff;
   
