@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import {FilterContainer} from './styles'
 import Options from '@components/Filter/Options';
-import Selected from '@components/Filter/Selected';
+import Filtered from '@components/Filter/Filtered';
 import Search from '@components/Filter/Search';
 
-function Filter ({ref}) {
+function Filter ({filters, setFilters}) {
   const [isSearch, setIsSearch] = useState(false)
 
   return (
     <>
       <FilterContainer>
-        <Options setIsSearch={setIsSearch}></Options>
-        <Selected></Selected>
-        {isSearch && <Search></Search>}
+        <Options filters={filters} setFilters={setFilters} isSearch={isSearch} setIsSearch={setIsSearch}></Options>
+        <Filtered filters={filters} setFilters={setFilters}></Filtered>
+        {isSearch && <Search setFilters={setFilters}></Search>}
       </FilterContainer>
-      <div></div>
     </>
   )
 }
