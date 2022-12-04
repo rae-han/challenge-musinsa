@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import DefaultLayout from '@layouts/DefaultLayout';
 import Filter from '@components/Filter';
 import Goods from '@components/Goods';

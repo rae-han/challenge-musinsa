@@ -14,9 +14,16 @@ function Goods ({goodsList, filters}) {
     return acc;
   }, goodsList);
 
+  if (!result) {
+    return null;
+  }
+
   return (
     <GoodsListContainer>
-      {result.map((goods, index) => ((!goods.isSoldOut || goods.readable) && <Item key={`${index}_${goods.goodsNo}`} goods={goods}></Item>))}
+      {result.length !== 0
+        ? result.map((goods, index) => ((!goods.isSoldOut || goods.readable) && <Item key={`${index}_${goods.goodsNo}`} goods={goods}></Item>))
+        : <div>검색 결과 없음</div>
+      }
     </GoodsListContainer>
   )
 }

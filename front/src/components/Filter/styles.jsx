@@ -149,6 +149,44 @@ export const SearchContainer = styled.div`
 export const AutoCompleteContainer = styled.div`
   position: absolute;
   width: calc(100% - 30px);
-  height: 400px;
-  //background-color: red;
+  max-height: 400px;
+  padding: 6px 10px 4px;
+  border: 1px solid var(--color-ccc);
+  border-top: none;
+  background-color: var(--color-white);
+  
+  .auto-complete--empty {
+    padding: 6px 0;
+    font-size: 12px;
+    color: var(--color-777);
+    text-align: center;
+  }
+  
+  .auto-complete__list {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 25px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--color-777);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 13px;
+
+    .auto-complete__list--brand-label {
+      height: 13px;
+      width: 33px;
+      margin-right: 6px;
+      border: 1px solid var(--color-main);
+      border-radius: 6px;
+      font-size: 10px;
+      color: var(--color-main);
+      text-align: center;
+    }
+  }
+
+  .auto-complete__list--highlight {
+    color: var(--color-main);
+  }
 `;

@@ -25,14 +25,11 @@ function Search ({ setFilters, goodsList }) {
       title: word,
       type: 'keyword',
       cb: (value) => value.filter(item => {
+
+        const specialRegExp = /([\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"])/gi;
+        word = word.replaceAll(specialRegExp, '');
+
         const regExp = new RegExp(word, 'gi');
-        console.log('####')
-        console.log(regExp);
-
-        const specialRegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
-        console.log(word.replaceAll(specialRegExp, ''));
-        console.log(word);
-
         return (regExp.test(item.goodsName) || regExp.test(item.brandName))
       })
     })))
