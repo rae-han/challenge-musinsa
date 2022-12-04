@@ -7,15 +7,12 @@ function Goods ({goodsList, filters}) {
     return null;
   }
 
-  console.log('#### filteredGoodsList')
-  console.log(filters)
   const result = filters.reduce((acc, cur) => {
-    if (cur.type === 'state') {
+    if (cur.cb) {
       acc = cur.cb(acc)
     }
     return acc;
   }, goodsList);
-  console.log(result);
 
   return (
     <GoodsListContainer>

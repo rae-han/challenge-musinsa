@@ -14,7 +14,7 @@ function Home() {
 
   return (
     <DefaultLayout>
-      <Filter filters={filters} setFilters={setFilters}></Filter>
+      <Filter filters={filters} setFilters={setFilters} goodsList={goodsList}></Filter>
       <Goods goodsList={goodsList} filters={filters} ></Goods>
       {isFetching && <Loading />}
     </DefaultLayout>

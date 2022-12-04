@@ -1,8 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { SearchContainer } from '@components/Filter/styles';
+import AutoComplete from '@components/Filter/AutoComplete';
+import useDebounce from '../../hooks/useDebounce';
 
-function Search ({ setFilters }) {
+function Search ({ setFilters, goodsList }) {
   const [value, setValue] = useState('')
+  const debounceValue = useDebounce(value);
 
   const onChange = useCallback(e => {
     setValue(e.target.value)
@@ -15,18 +18,27 @@ function Search ({ setFilters }) {
       return;
     }
 
-    const values = value.split(' ');
+    const words = value.split(' ');
 
-    values.forEach()
-
-    setFilters(prev => prev.concat({
-      key: value,
-      title: value,
+    words.forEach(word => setFilters(prev => prev.concat({
+      key: word,
+      title: word,
       type: 'keyword',
-      cb: () => {}
-    }))
+      cb: (value) => value.filter(item => {
+        const regExp = new RegExp(word, 'gi');
+        console.log('####')
+        console.log(regExp);
+
+        const specialRegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi;
+        console.log(word.replaceAll(specialRegExp, ''));
+        console.log(word);
+
+        return (regExp.test(item.goodsName) || regExp.test(item.brandName))
+      })
+    })))
+
     setValue('');
-  }, [value])
+  }, [value, setValue])
 
   return (
     <SearchContainer>
@@ -39,7 +51,7 @@ function Search ({ setFilters }) {
         />
         <button className="search__button"></button>
       </form>
-
+      { debounceValue !== '' && <AutoComplete keyword={debounceValue} data={goodsList}></AutoComplete>}
     </SearchContainer>
   )
 }

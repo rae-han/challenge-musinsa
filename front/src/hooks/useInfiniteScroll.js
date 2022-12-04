@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 const throttle = (handler, timeout = 500) => {
   let invokedTime;
   let timer;
-  return function (...args) {
+  return (...args) => {
     if (!invokedTime) {
       handler.apply(this, args)
       invokedTime = Date.now()

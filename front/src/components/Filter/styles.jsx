@@ -120,8 +120,8 @@ export const SearchContainer = styled.div`
   
   .search__input {
     width: 100%;
-    height: 100%;
-    padding: 8px 10px;
+    height: 40px;
+    padding: 0 10px;
     padding-left: 36px;
     border: 1px solid var(--color-ccc);
     font-size: 16px;
@@ -144,5 +144,11 @@ export const SearchContainer = styled.div`
     background-repeat: no-repeat;
     transform: translate(0, -50%);
   }
-  
+`;
+
+export const AutoCompleteContainer = styled.div`
+  position: absolute;
+  width: calc(100% - 30px);
+  height: 400px;
+  //background-color: red;
 `;
