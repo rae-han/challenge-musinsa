@@ -65,6 +65,9 @@ export const useInfiniteScroll = (fetcher, limit = 3, filters) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  /**
+   * @description 필터링 했을 경우, 목록 아이템이 부족하다면 자동으로 데이터를 더 불러오게 해주는 코드.
+   */
   useEffect(() => {
     const scrollY = window.scrollY;
     const { clientHeight, scrollHeight } = document.documentElement;
