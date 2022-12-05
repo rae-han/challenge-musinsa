@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1858aaab-797b-40a5-b42e-a2807c9fa4ff" name="변경" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/front/src/hooks/useThrottle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Goods/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Goods/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Goods/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Goods/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/pages/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/pages/home.jsx" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
+>>>>>>> 52f7d9ee1e2db63cb5b708b76085051e974be50d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "16.14.0",
+    "javascript.nodejs.core.library.typings.version": "16.18.4",
+    "last_opened_file_path": "/Users/raehan/Documents/develop/project/challenge-musinsa",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+=======
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -35,6 +60,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
   }
 }</component>
   <component name="RecentsManager">
@@ -55,8 +81,17 @@
       <option name="presentableId" value="Default" />
       <updated>1669869890072</updated>
       <workItem from="1669869891465" duration="2073000" />
+<<<<<<< HEAD
+      <workItem from="1669874368148" duration="12565000" />
+      <workItem from="1669992345135" duration="14824000" />
+=======
       <workItem from="1669874368148" duration="35163000" />
+<<<<<<< HEAD
       <workItem from="1669970378534" duration="9663000" />
+=======
+      <workItem from="1669970378534" duration="9056000" />
+>>>>>>> 67e36079be975aa2f2fa98a388135b75d840f817
+>>>>>>> 52f7d9ee1e2db63cb5b708b76085051e974be50d
     </task>
     <servers />
   </component>

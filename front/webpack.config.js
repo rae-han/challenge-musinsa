@@ -15,7 +15,7 @@ const config = {
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@public': path.resolve(__dirname, 'public'),
-      '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@images': path.resolve(__dirname, 'public/images'),
     },
   },
   entry: {

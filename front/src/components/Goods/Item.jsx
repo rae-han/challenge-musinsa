@@ -4,35 +4,36 @@ import { commaNumber } from '../../utils/commaNumber';
 import { classnames } from '../../utils/classnames';
 import notfoundImage from '@images/notfoundImage.jpeg'
 
-function Item ({good}) {
+function Item ({goods}) {
   const [isErrorImage, setIsErrorImage] = useState(false)
 
   const onErrorImage = useCallback(() => {
     setIsErrorImage(true)
-  }, [good.imageUrl, isErrorImage])
+  }, [goods.imageUrl, isErrorImage])
 
-  const goodPrice = useMemo(() => {
-    return commaNumber(good.price);
-  }, [good.price])
+  const goodsPrice = useMemo(() => {
+    return commaNumber(goods.price);
+  }, [goods.price])
 
-  const goodNormalPrice = useMemo(() => {
-    return commaNumber(good.normalPrice);
-  }, [good.normalPrice])
+  const goodsNormalPrice = useMemo(() => {
+    return commaNumber(goods.normalPrice);
+  }, [goods.normalPrice])
 
   return (
     <ItemWrap>
-      <div className="good__image-wrap">
-        <img className={classnames("good__image", { 'good_image--notfound': isErrorImage, qwer: true })} src={!isErrorImage ? good.imageUrl : notfoundImage} alt="" onError={onErrorImage} />
-        {good.isSoldOut && <div className="good__image--soldout">SOLD OUT</div>}
+      <div className="goods__image-wrap">
+        <img className={classnames("goods__image", { 'goods_image--notfound': isErrorImage, qwer: true })} src={!isErrorImage ? goods.imageUrl : notfoundImage} alt="" onError={onErrorImage} />
+        {goods.isSoldOut && <div className="goods__image--soldout">SOLD OUT</div>}
       </div>
-      <div className="good__info">
-        <h2 className="good__brand-name">{good.brandName}</h2>
-        <h1 className="good__good-name">{good.goodsName}</h1>
-        <div className="good__row">
-          <span className='good__price'>{goodPrice}</span>
-          <span className='good__sale-rate'>{good.saleRate}％</span>
+      <div className="goods__info">
+        {goods.isExclusive && <span className="goods--exclusive">단독</span>}
+        <h2 className="goods__brand-name">{goods.brandName}</h2>
+        <h1 className="goods__goods-name">{goods.goodsName}</h1>
+        <div className="goods__row">
+          <span className='goods__price'>{goodsPrice}원</span>
+          {goods.isSale && <span className='goods__sale-rate'>{goods.saleRate}％</span>}
         </div>
-        <p className='good__origin-price'>{goodNormalPrice}원</p>
+        {goods.isSale && <p className='goods__origin-price'>{goodsNormalPrice}원</p>}
       </div>
     </ItemWrap>
   )
