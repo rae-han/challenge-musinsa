@@ -1,13 +1,13 @@
 import React, {useCallback} from 'react';
 import { AutoCompleteContainer } from './styles';
 
-function AutoComplete ({ keyword, data = [] }) {
+function AutoComplete ({ keyword, data = [], setValue, setFilters }) {
   const highlighted = useCallback((text, keyword) => {
     const parts = text.split(new RegExp(`(${keyword})`, 'gi'));
     const highlightKeyword = keyword.replaceAll('\\', '');
 
     return (
-      <span>{parts.map((part, i) => {
+      <>{parts.map((part, i) => {
         return (
           <span
             key={i}
@@ -16,9 +16,24 @@ function AutoComplete ({ keyword, data = [] }) {
             {part}
           </span>
         )
-      })}</span>
+      })}</>
     );
   }, [])
+
+  const pushKeyword = useCallback((keyword) => {
+    setValue('');
+    setFilters(prev => prev.concat({
+      key: keyword,
+      title: keyword,
+      type: 'keyword',
+      cb: (value) => value.filter(item => {
+        const specialRegExp = /([\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"])/gi;
+        const newKeyword = keyword.replace(specialRegExp, '\\\$1');
+        const regExp = new RegExp(newKeyword, 'gi');
+        return (regExp.test(item.goodsName) || regExp.test(item.brandName))
+      })
+    }))
+  }, [setValue, setFilters])
 
   const specialRegExp = /([\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"])/gi;
   const newKeyword = keyword.replace(specialRegExp, '\\\$1');
@@ -58,13 +73,13 @@ function AutoComplete ({ keyword, data = [] }) {
         && <div className="auto-complete--empty">추천 검색어 없음</div>
       }
       {/*{goods.begin.length !== 0 && goods.match.length !== 0 && <h2 className="">추천 검색어</h2>}*/}
-      {goods.begin.map((item, index) => <div className="auto-complete__list" key={`goods_begin_${index}`}>{highlighted(item, newKeyword)}</div>)}
-      {goods.match.map((item, index) => <div className="auto-complete__list" key={`goods_match_${index}`}>{highlighted(item, newKeyword)}</div>)}
-      {brand.begin.map((item, index) => <div className="auto-complete__list" key={`brand_begin_${index}`}>
+      {goods.begin.map((item, index) => <div className="auto-complete__list" key={`goods_begin_${index}`} onClick={() => pushKeyword(item)}>{highlighted(item, newKeyword)}</div>)}
+      {goods.match.map((item, index) => <div className="auto-complete__list" key={`goods_match_${index}`} onClick={() => pushKeyword(item)}>{highlighted(item, newKeyword)}</div>)}
+      {brand.begin.map((item, index) => <div className="auto-complete__list" key={`brand_begin_${index}`} onClick={() => pushKeyword(item)}>
         <span className='auto-complete__list--brand-label'>브랜드</span>
         <span>{item}</span>
       </div>)}
-      {brand.match.map((item, index) => <div className="auto-complete__list" key={`brand_match_${index}`}>
+      {brand.match.map((item, index) => <div className="auto-complete__list" key={`brand_match_${index}`} onClick={() => pushKeyword(item)}>
         <span className='auto-complete__list--brand-label'>브랜드</span>
         <span>{item}</span>
       </div>)}

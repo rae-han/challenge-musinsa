@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import logo from '../../assets/images/logo_musinsa.svg'
+// import logo from '../../../public/images/logo_musinsa.svg'
+import logo from '@images/logo_musinsa.svg'
 
 const HeaderContainer = styled.header`
   position: sticky;

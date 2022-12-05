@@ -5,7 +5,7 @@ import Filtered from '@components/Filter/Filtered';
 import Search from '@components/Filter/Search';
 
 function Filter ({filters, setFilters, goodsList}) {
-  const [isSearch, setIsSearch] = useState(true)
+  const [isSearch, setIsSearch] = useState(false)
 
   return (
     <>

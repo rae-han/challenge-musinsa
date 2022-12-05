@@ -5,7 +5,7 @@ import useDebounce from '../../hooks/useDebounce';
 
 function Search ({ setFilters, goodsList }) {
   const [value, setValue] = useState('')
-  const debounceValue = useDebounce(value);
+  const debounceValue = useDebounce(value, 250);
 
   const onChange = useCallback(e => {
     setValue(e.target.value)
@@ -14,7 +14,7 @@ function Search ({ setFilters, goodsList }) {
   const onSubmit = useCallback(e => {
     e.preventDefault();
 
-    if (!value) {
+    if (!value || value === '') {
       return;
     }
 
@@ -48,7 +48,7 @@ function Search ({ setFilters, goodsList }) {
         />
         <button className="search__button"></button>
       </form>
-      { debounceValue !== '' && <AutoComplete keyword={debounceValue} data={goodsList}></AutoComplete>}
+      { (debounceValue !== '' && value !== '') && <AutoComplete keyword={debounceValue} data={goodsList} setValue={setValue} setFilters={setFilters}></AutoComplete>}
     </SearchContainer>
   )
 }
