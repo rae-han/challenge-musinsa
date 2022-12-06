@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import { AutoCompleteContainer } from './styles';
 
-function AutoComplete ({ keyword, data = [], setValue, setFilters }) {
+function AutoComplete ({ keyword, data = [], filters, setValue, setFilters }) {
   const highlighted = useCallback((text, keyword) => {
     const parts = text.split(new RegExp(`(${keyword})`, 'gi'));
     const highlightKeyword = keyword.replaceAll('\\', '');
@@ -27,7 +27,7 @@ function AutoComplete ({ keyword, data = [], setValue, setFilters }) {
       title: keyword,
       type: 'keyword',
       cb: (value) => value.filter(item => {
-        const specialRegExp = /([\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"])/gi;
+        const specialRegExp  = /([\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"])/gi;
         const newKeyword = keyword.replace(specialRegExp, '\\\$1');
         const regExp = new RegExp(newKeyword, 'gi');
         return (regExp.test(item.goodsName) || regExp.test(item.brandName))
@@ -77,11 +77,11 @@ function AutoComplete ({ keyword, data = [], setValue, setFilters }) {
       {goods.match.map((item, index) => <div className="auto-complete__list" key={`goods_match_${index}`} onClick={() => pushKeyword(item)}>{highlighted(item, newKeyword)}</div>)}
       {brand.begin.map((item, index) => <div className="auto-complete__list" key={`brand_begin_${index}`} onClick={() => pushKeyword(item)}>
         <span className='auto-complete__list--brand-label'>브랜드</span>
-        <span>{item}</span>
+        <span>{highlighted(item, newKeyword)}</span>
       </div>)}
       {brand.match.map((item, index) => <div className="auto-complete__list" key={`brand_match_${index}`} onClick={() => pushKeyword(item)}>
         <span className='auto-complete__list--brand-label'>브랜드</span>
-        <span>{item}</span>
+        <span>{highlighted(item, newKeyword)}</span>
       </div>)}
     </AutoCompleteContainer>
   )

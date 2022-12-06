@@ -78,7 +78,6 @@ export const useInfiniteScroll = (fetcher, limit = 3, filters) => {
   }, [filters])
 
   useEffect(() => {
-    console.log('here')
     if (isFetching && hasNextPage) executeFetch()
     else if (!hasNextPage) setIsFetching(false)
   }, [isFetching])

@@ -1,18 +1,21 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { GoodsContainer, GoodsListContainer } from './styles';
 import Item from '@components/Goods/Item';
+import NotfoundGoods from '@components/Goods/NotfoundGoods';
 
 function Goods ({goodsList, filters}) {
   if (!goodsList) {
     return null;
   }
 
-  const result = filters.reduce((acc, cur) => {
-    if (cur.cb) {
-      acc = cur.cb(acc)
-    }
-    return acc;
-  }, goodsList);
+  const result = useMemo(() => {
+    return filters.reduce((acc, cur) => {
+      if (cur.cb) {
+        acc = cur.cb(acc)
+      }
+      return acc;
+    }, goodsList);
+  }, [goodsList, filters])
 
   if (!result) {
     return null;
@@ -21,8 +24,8 @@ function Goods ({goodsList, filters}) {
   return (
     <GoodsListContainer>
       {result.length !== 0
-        ? result.map((goods, index) => ((!goods.isSoldOut || goods.readable) && <Item key={`${index}_${goods.goodsNo}`} goods={goods}></Item>))
-        : <div>검색 결과 없음</div>
+        ? [...new Set(result.map(JSON.stringify))].map(JSON.parse).map((goods, index) => ((!goods.isSoldOut || goods.readable) && <Item key={`${index}_${goods.goodsNo}`} goods={goods}></Item>))
+        : <NotfoundGoods />
       }
     </GoodsListContainer>
   )

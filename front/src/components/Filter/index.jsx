@@ -12,7 +12,7 @@ function Filter ({filters, setFilters, goodsList}) {
       <FilterContainer>
         <Options filters={filters} setFilters={setFilters} isSearch={isSearch} setIsSearch={setIsSearch}></Options>
         <Filtered filters={filters} setFilters={setFilters}></Filtered>
-        {isSearch && <Search setFilters={setFilters} goodsList={goodsList}></Search>}
+        {isSearch && <Search setFilters={setFilters} goodsList={goodsList} filters={filters}></Search>}
       </FilterContainer>
     </>
   )

@@ -3,7 +3,7 @@ import { SearchContainer } from '@components/Filter/styles';
 import AutoComplete from '@components/Filter/AutoComplete';
 import useDebounce from '../../hooks/useDebounce';
 
-function Search ({ setFilters, goodsList }) {
+function Search ({ setFilters, goodsList, filters }) {
   const [value, setValue] = useState('')
   const debounceValue = useDebounce(value, 250);
 
@@ -48,7 +48,7 @@ function Search ({ setFilters, goodsList }) {
         />
         <button className="search__button"></button>
       </form>
-      { (debounceValue !== '' && value !== '') && <AutoComplete keyword={debounceValue} data={goodsList} setValue={setValue} setFilters={setFilters}></AutoComplete>}
+      { (debounceValue !== '' && value !== '') && <AutoComplete keyword={debounceValue} data={goodsList} setValue={setValue} setFilters={setFilters} filters={filters}></AutoComplete>}
     </SearchContainer>
   )
 }
