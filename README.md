@@ -1,7 +1,7 @@
 # 1. 개발 환경
 
 1. OS: MacOS
-2. Runtime: npm@8.3.1 (node@16)
+2. Runtime: node@16(npm@8.3.1) 
 3. 언어: Javascript
 4. 사용 라이브러리
     - react, react-dom
@@ -22,17 +22,17 @@ npm run dev
 
 # 3. 프로젝트 구조
 
-- public - 정적 파일을 위한 디렉토리
+- public - 정적 파일을 위한 폴더
     - fonts - 글꼴
-    - image - 로고와 아이콘 같은 이미지가 있음
+    - image - 로고와 아이콘 같은 이미지가 있는 폴더
     - stylesheets - reset, normalize 등의 css 초기화를 위한 코드와 전체 코드에서 사용되는 공통된 스타일 정의가 있음
-- src - 실제 소스코드들이 모여있는 디렉토리
+- src - 실제 소스코드들이 모여있는 폴더
     - apis
     - components
-    - hooks - 커스텀 훅(쓰로틀링, 디바운싱)을 작성한 디렉토리
+    - hooks - 커스텀 훅(쓰로틀링, 디바운싱)을 작성한 폴더
     - layouts
     - pages
-    - utils - 숫자에 콤마를 찍는다던지 클레스 목록을 만들어주는 등의 유틸 함수가 있는 디렉토리
+    - utils - 숫자에 콤마를 찍는다던지 클레스 목록을 만들어주는 등의 유틸 함수가 있는 폴더
 - index.html - 엔트리 포인트로 쓰일 html 파일
 - index.js - 작성한 코드를 index.html에서 볼수 있도록 해줄 파일
 - package.json

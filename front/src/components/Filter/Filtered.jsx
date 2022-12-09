@@ -30,8 +30,7 @@ function Filtered ({ filters, setFilters }) {
           </button>)
         )}
       </div>
-      <button
-        className="filtered__refresh-button"
+        tton        className="filtered__refresh-button"
         onClick={() => setFilters([])}
       ></button>
     </FilteredContainer>
